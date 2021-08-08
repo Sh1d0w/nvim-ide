@@ -17,6 +17,10 @@ if has("nvim")
   Plug 'itchyny/vim-gitbranch'
   Plug 'glepnir/dashboard-nvim'
 endif
+
+if !empty(glob("$HOME/.config/nvim/plugins.vim"))
+    source $HOME/.config/nvim/plugins.vim
+endif
  
 call plug#end()
 

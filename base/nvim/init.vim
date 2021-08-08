@@ -17,6 +17,8 @@ autocmd WinEnter,BufEnter * if &filetype != 'dashboard' | set showtabline=0 | se
 
 set expandtab
 
+set shell=/bin/bash
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2

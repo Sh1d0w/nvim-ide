@@ -1,0 +1,9 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["php"],
+  "phpactor.path": "/home/developer/bin/phpactor",
+  "php-cs-fixer.toolPath": "/home/developer/bin/php-cs-fixer",
+  "php-cs-fixer.enableFormatProvider": true,
+  "php-cs-fixer.rules": "@PSR12,@PhpCsFixer",
+  "list.source.files.excludePatterns": ["**/vendor/**", "**/node_modules/**"]
+}
+

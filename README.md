@@ -29,7 +29,7 @@
 
 ## Motivation
 
-This is my personal Neovim configuration that I use for different languages. I've decided to dockerize it in order to make it more portable and easy to use on different machines.
+This is my personal Neovim configuration that I use for different languages. I've decided to dockerize it in order to make it more portable and easy to use on different machines. Another benefit is that you don't have to install external dependecies on your host machine like Node or Composer as they are bundled in the respective docker containers.
 
 ## Features
 

@@ -1,5 +1,7 @@
 FROM sh1d0w/alpine-nvim:latest
 
+MAINTAINER Sh1d0w <5074917+Sh1d0w@users.noreply.github.com>
+
 WORKDIR /home/developer
 
 RUN nvim +'CocInstall -sync coc-prettier coc-eslint coc-cssmodules coc-tsserver' +qall
