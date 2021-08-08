@@ -15,9 +15,13 @@ if has("nvim")
   Plug 'preservim/nerdcommenter'
   Plug 'voldikss/vim-floaterm'
   Plug 'itchyny/vim-gitbranch'
+  Plug 'glepnir/dashboard-nvim'
 endif
  
 call plug#end()
+
+" get neovim version
+let g:neovim_version = matchstr(execute('version'), 'NVIM v\zs[^\n]*')
 
 " Pluging specific configuration
 " -------------------------------------------------------
@@ -85,3 +89,53 @@ let g:lightline = {
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+
+" Dashboard nvim
+" #######################################################
+
+let g:dashboard_default_executive ='fzf'
+
+let g:dashboard_custom_section = {
+      \ 'find_history': {
+        \ 'description': ['  Recently opened files                 SPC f h'],
+        \ 'command': 'History',
+      \ },
+      \ 'find_word': {
+        \ 'description': ['  Find  word                            SPC f d'],
+        \ 'command': 'CocFzfList grep'
+      \ },
+      \ 'find_file': {
+        \ 'description': ['  Find  File                            SPC f f'],
+        \ 'command': 'CocFzfList files'
+      \ }
+\ }
+
+let g:dashboard_custom_header = [
+\"",
+\"       ▄▄        ▄▄ ",
+\"     ▄████       ███▄                                            ▄▄ ",
+\"   ▄ ▀█████▄     █████                                           ▀▀ ",
+\"   ▌ ▀▄██████    █████     ▌ ▄▀▀▄▄   ▄▄▀▀ ▄    ▄ ▀▀▄▄ ▓█▄    ▄█▌▐██ ▐██▄███▄▄▓███▄ ",
+\"   ▌    ▀█████▄  █████     ▌     ▐  ▓      █ ▄▀     ▐▌ ██▄  ▄█▌ ▐██ ▐██   ▐██   ▓██ ",
+\"   ▌   ▐  ██████ █████     ▌     ▐▌ █▀▀▀▀▀▀▀ █       █  ██ ▐██  ▐██ ▐██   ▐██   ▐██ ",
+\"   ▌   ▐   ▀█████▄████     ▌     ▐▌ █        ▀▄      █   ████   ▐██ ▐██   ▐██   ▐██ ",
+\"   ▌   ▐    ▀█████▄▀██     ▌     ▐   ▀▀▄▄▄▀▀   ▀▄▄▄▀▀    ▐▀▀    ▐▀▀ ▐▀▀   ▐▀▀   ▐▀▀ ",
+\"   ▀   ▐      ▀█████ █ ",
+\"     ▀▄▐       ▀████ ",
+\"       ▀         ▀ ",
+\"",
+\"                                                             version: ". g:neovim_version ."",
+\"",
+\"",
+\"",
+\"",
+\"",
+\ ]
+
+"headercolor
+hi! dashboardHeader guifg=#c3e88d
+hi! dashboardCenter guifg=#89ddff
+hi! dashboardShortcut guifg=#c792ea
+hi! dashboardFooter guifg=#676E95
+
+autocmd VimEnter * Dashboard

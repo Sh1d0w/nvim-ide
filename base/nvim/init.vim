@@ -12,7 +12,8 @@ endif
 set number relativenumber
 
 " Show status line
-set laststatus=2
+autocmd Filetype dashboard set showtabline=0 | set laststatus=0 | set noruler
+autocmd WinEnter,BufEnter * if &filetype != 'dashboard' | set showtabline=0 | set laststatus=2 | endif
 
 set expandtab
 
