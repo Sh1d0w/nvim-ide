@@ -21,6 +21,7 @@
   <a href="#features">Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#configuration">Configuration</a> •
+  <a href="#key-bindings">Key bindings</a> •
   <a href="#license">License</a>
 </p>
 
@@ -60,6 +61,10 @@ Here we are creating two aliases:
 ## Configuration
 
 Configure themes etc.
+
+TODO
+
+## Key bindings
 
 TODO
 
