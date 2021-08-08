@@ -16,16 +16,26 @@
 </p>
 
 <p align="center">
+  <a href="#motivation">Motivation</a> •
   <a href="#available-images">Available images</a> •
+  <a href="#features">Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#license">License</a>
 </p>
 
 ![screenshot](https://github.com/Sh1d0w/nvim-ide/blob/master/images/preview.png?raw=true)
 
+## Motivation
+
+This is my personal Neovim configuration that I use for different languages. I've decided to dockerize it in order to make it more portable and easy to use on different machines.
+
+## Features
+
+TODO
+
 ## Available images
 
-- [sh1d0w/nvim-typescript](https://hub.docker.com/repository/docker/sh1d0w/nvim-typescript)
+- [sh1d0w/nvim-typescript](https://hub.docker.com/repository/docker/sh1d0w/nvim-typescript) (doc TODO)
 
 More images will be available soon for PHP, Go, Flutter
 
