@@ -39,6 +39,7 @@ TODO
 
 - [sh1d0w/alpine-nvim](https://hub.docker.com/repository/docker/sh1d0w/alpine-nvim) - Base image with no language specific plugins (doc TODO)
 - [sh1d0w/nvim-typescript](https://hub.docker.com/repository/docker/sh1d0w/nvim-typescript) - Fully configured IDE for React/Typescript development (doc TODO)
+- [sh1d0w/nvim-php](https://hub.docker.com/repository/docker/sh1d0w/nvim-php) - Fully configured IDE for PHP development (doc TODO)
 
 More images will be available soon for PHP, Go, Flutter
 
