@@ -1,4 +1,6 @@
 {
+  "phpstan.toolPath": "/home/developer/.composer/vendor/bin/phpstan",
+  "phpstan.memoryLimit": "-1",
   "coc.preferences.formatOnSaveFiletypes": ["php"],
   "phpactor.path": "/home/developer/bin/phpactor",
   "php-cs-fixer.toolPath": "/home/developer/bin/php-cs-fixer",

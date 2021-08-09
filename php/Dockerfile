@@ -10,23 +10,29 @@ USER root
 
 # Install PHP 8 and Composer
 RUN apk add --no-cache \
-  php \
-  php-ctype \
-  php-tokenizer \
-  php-dom \
-  php-curl \
-  php-json \
-  php-gd \
-  php-mbstring \
-  php-pdo \
-  php-pdo_mysql \
-  php-xml \
-  php-xmlwriter \
-  php-intl \
-  php-pcntl \ 
+  php8 \
+  php8-ctype \
+  php8-tokenizer \
+  php8-dom \
+  php8-curl \
+  php8-json \
+  php8-gd \
+  php8-mbstring \
+  php8-pdo \
+  php8-pdo_mysql \
+  php8-xml \
+  php8-xmlwriter \
+  php8-intl \
+  php8-pcntl \ 
+  php8-phar \
+  php8-posix \
+  python3 \
+  py3-pip \
+  py3-pynvim \
   composer && \
   rm -rf /var/cache/apk/*
 
+RUN rm /usr/bin/php && ln -s /usr/bin/php8 /usr/bin/php
 # Switch back as the developer user
 USER developer
 
@@ -49,13 +55,20 @@ RUN composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer 
 # Install Coc plugins
 RUN nvim +'CocInstall -sync coc-phpactor coc-php-cs-fixer' +qall
 
-RUN echo "Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}" >> /home/developer/.config/nvim/plugins.vim
+COPY --chown=developer nvim/plugins.vim .config/nvim/plugins.vim
 
 RUN nvim +'PlugInstall' +qall
 
+RUN mkdir -p .config/coc/extensions/@yaegassy/coc-phpstan-data && \
+  chown developer:developer .config/coc/extensions/@yaegassy/coc-phpstan-data
+
+# RUN nvim +'CocCommand phpstan.download' +qall
+
+RUN composer global require phpstan/phpstan
+
 RUN mkdir workspace
 
-RUN echo "export PATH=$HOME/bin:$PATH" >> .bashrc
+RUN echo "export PATH=$HOME/bin:$HOME/.composer/vendor/bin:$PATH" >> .bashrc
 
 COPY --chown=developer nvim .config/nvim/php
 COPY --chown=developer nvim/coc-settings.json .config/nvim
