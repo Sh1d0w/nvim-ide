@@ -1,5 +1,8 @@
 runtime ./plug.vim
 
+" Disable netrwPlugin
+let loaded_netrwPlugin = 1
+
 if (has("termguicolors"))
   syntax enable
   set termguicolors

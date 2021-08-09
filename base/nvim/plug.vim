@@ -143,3 +143,10 @@ hi! dashboardShortcut guifg=#c792ea
 hi! dashboardFooter guifg=#676E95
 
 autocmd VimEnter * Dashboard
+function! LaunchDashboard()
+  if argc() == 1 && isdirectory(argv()[0])
+      execute "Dashboard"
+  endif
+endfunction
+
+autocmd VimEnter * :call LaunchDashboard()
