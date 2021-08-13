@@ -17,6 +17,7 @@
 - `ci"` - Change text between double quotes and enter `INSERT` mode
 - `yy` - Copy line and add it to a buffer
 - `p` - Paste from buffer
+- `<leader>rn` = Rename symbol
 
 ## Navigation
 
